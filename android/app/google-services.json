@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "694426742223",
+    "project_id": "fitbox-00",
+    "storage_bucket": "fitbox-00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694426742223:android:bef4295eef376ab98336ba",
+        "android_client_info": {
+          "package_name": "lamartine.com.br.fit_box_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694426742223-ma9pgadoaso6q3dnkk38jgc6t12v3rf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf7rYXEjO97eJycSdZxbSXRb7OgFXJrdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694426742223-ma9pgadoaso6q3dnkk38jgc6t12v3rf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
