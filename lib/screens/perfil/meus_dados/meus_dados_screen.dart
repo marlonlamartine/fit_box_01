@@ -29,7 +29,8 @@ class _MeusDadosScreenState extends State<MeusDadosScreen> {
               style: TextStyle(color: Colors.white),
             ),
             TextFormField(
-              decoration: InputDecoration(hintText: 'E-mail',
+              decoration: InputDecoration(
+                  hintText: 'E-mail',
                   hintStyle: TextStyle(color: Colors.white),
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)

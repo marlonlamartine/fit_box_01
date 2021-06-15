@@ -1,3 +1,4 @@
+import 'package:fit_box_01/common/custom_drawer/custom_drawer.dart';
 import 'package:fit_box_01/screens/meu_treino/ficha/components/ficha_list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +10,11 @@ class MeuTreinoScreen extends StatefulWidget {
 class _MeuTreinoScreenState extends State<MeuTreinoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text('Minha Ficha', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
-        ],
+    return Scaffold(
+      drawer: CustomDrawer(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Meu Treino'),
       ),
     );
   }

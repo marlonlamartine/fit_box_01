@@ -1,3 +1,4 @@
+import 'package:fit_box_01/screens/login/login_screen.dart';
 import 'package:fit_box_01/screens/perfil/meus_dados/meus_dados_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,29 +9,44 @@ class PerfilScreen extends StatefulWidget {
 
 class _PerfilScreenState extends State<PerfilScreen> {
 
+  final PageController pageController = PageController(initialPage: 0);
+
+  bool isPageControl(){
+    if(pageController.page == 2) {
+      return true;
+    }
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final PageController pageController = PageController(initialPage: 0);
+
     return Center(
       child: Form(
         child: ListView(
           children: [
-            Container(
-              //color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 30, 8, 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('Fazer Login', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),),
-                    Text('Registrar-se', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),)
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 50),
+              child: Center(child: CircleAvatar(radius: 70, backgroundColor: Colors.blueGrey,)),
+            ),
+            Center(
+              child: GestureDetector(
+                onTap: (){
+                  setState(() {
+                    pageController.jumpToPage(2);
+                  });
+
+                 /* Navigator.push(context, new MaterialPageRoute(
+                      builder: (context) =>
+                      new LoginScreen())
+                  );*/
+                },
+                child: Text(
+                  'Entre ou Cadastre-se'
+                , style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),),
               ),
             ),
-            const SizedBox(height: 15,),
-            CircleAvatar(radius: 70, backgroundColor: Colors.blueGrey,),
-            const SizedBox(height: 12,),
+            const SizedBox(height: 30,),
             Container(
               height: 600,
               width: 800,
@@ -40,6 +56,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
                 children: [
                   Center(child: Text('Meu Histórico', style: TextStyle(color: Colors.white),),),
                   Center(child: MeusDadosScreen()),
+                  Center(child: LoginScreen(),)
                 ],
               ),
             ),
