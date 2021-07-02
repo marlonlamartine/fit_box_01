@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_box_01/models/userManager.dart';
 import 'package:fit_box_01/screens/base/base_screen.dart';
 import 'package:fit_box_01/screens/login/login_screen.dart';
+import 'package:fit_box_01/screens/signup/signUp_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => UserManager(),
+      lazy: false,
       child: MaterialApp(
         title: 'FitBox',
         debugShowCheckedModeBanner: false,
@@ -67,6 +69,10 @@ class MyApp extends StatelessWidget {
             case '/login':
               return MaterialPageRoute(
                   builder: (_) => LoginScreen()
+              );
+            case '/signup':
+              return MaterialPageRoute(
+                  builder: (_) => SignupScreen()
               );
             case '/base':
             default:

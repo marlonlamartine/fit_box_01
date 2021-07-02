@@ -21,7 +21,9 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           TextButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.of(context).pushReplacementNamed('/signup');
+              },
             child: const Text('CRIAR CONTA', style: TextStyle(fontSize: 14, color: Colors.white),),
           )
         ],
@@ -91,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                                   );
                                 },
                                 onSuccess: (){
-                                  //TODO: Fazer um pop depois
+                                  Navigator.of(context).pop();
                                 }
                             );
                           }
