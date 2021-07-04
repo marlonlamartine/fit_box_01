@@ -1,4 +1,6 @@
+import 'package:fit_box_01/models/pageManager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DrawerTile extends StatelessWidget {
 
@@ -11,9 +13,13 @@ class DrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final int currentPage = context.watch<PageManager>().page;
     final Color primaryColor = Theme.of(context).primaryColor;
 
     return InkWell(
+      onTap: (){
+        context.read<PageManager>().setPage(page);
+      },
       child: SizedBox(
         height: 60,
         child: Row(
@@ -23,14 +29,14 @@ class DrawerTile extends StatelessWidget {
               child: Icon(
                 iconData,
                 size: 32,
-                color: primaryColor,
+                color: currentPage == page ? primaryColor : Colors.grey[700],
               ),
             ),
             Text(
               title,
               style: TextStyle(
                 fontSize: 16,
-                color: primaryColor,
+                color: currentPage == page ? primaryColor : Colors.grey[700],
               ),
             )
           ],

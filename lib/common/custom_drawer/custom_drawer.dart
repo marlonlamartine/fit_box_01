@@ -28,6 +28,7 @@ class CustomDrawer extends StatelessWidget {
               DrawerTile(iconData: Icons.list, title: 'Meu treino', page: 0,),
               DrawerTile(iconData: Icons.person_rounded, title: 'Perfil', page: 1,),
               DrawerTile(iconData: Icons.account_balance, title: 'Academia', page: 2,),
+              DrawerTile(iconData: Icons.accessibility_new, title: 'Exercícios', page: 3,),
             ],
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fit_box_01/models/activityManager.dart';
 import 'package:fit_box_01/models/userManager.dart';
 import 'package:fit_box_01/screens/base/base_screen.dart';
 import 'package:fit_box_01/screens/login/login_screen.dart';
@@ -52,9 +53,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => UserManager(),
-      lazy: false,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+            create: (_) => UserManager(),
+            lazy: false,
+        ),
+        ChangeNotifierProvider(
+            create: (_) => ActivityManager(),
+            lazy: false,
+        ),
+
+      ],
       child: MaterialApp(
         title: 'FitBox',
         debugShowCheckedModeBanner: false,
