@@ -13,6 +13,38 @@ class ActivityManager extends ChangeNotifier
 
   List<Activity> allActivities = [];
 
+  String _search = '';
+
+  String get search => _search;
+
+  set search(String value)
+  {
+    _search = value;
+    notifyListeners();
+  }
+
+
+
+  List<Activity> get filteredActivities
+  {
+    final List<Activity> filteredActivities = [];
+
+    if(search.isEmpty){
+      filteredActivities.addAll(allActivities);
+    }
+    else{
+      filteredActivities.addAll(
+          allActivities.where(
+                  (a) => a.name.toLowerCase().contains(search.toLowerCase())
+          )
+      );
+    }
+
+    return filteredActivities;
+  }
+
+
+
   Future<void> _loadAllActivities() async
   {
     final QuerySnapshot snapshot = await firebaseFirestore.
