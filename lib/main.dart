@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fit_box_01/models/activity.dart';
 import 'package:fit_box_01/models/activityManager.dart';
 import 'package:fit_box_01/models/userManager.dart';
+import 'package:fit_box_01/screens/activity/activity_screen.dart';
 import 'package:fit_box_01/screens/base/base_screen.dart';
 import 'package:fit_box_01/screens/login/login_screen.dart';
 import 'package:fit_box_01/screens/signup/signUp_screen.dart';
@@ -84,6 +86,12 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(
                   builder: (_) => SignupScreen()
               );
+            case '/activity':
+              return MaterialPageRoute(
+                  builder: (_) => ActivityScreen(
+                    settings.arguments as Activity
+                  )
+              );  
             case '/base':
             default:
               return MaterialPageRoute(
